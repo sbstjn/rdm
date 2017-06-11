@@ -1,5 +1,14 @@
 # rdm - ReadMe scaffolding
 
+## Install
+
+```bash
+$ > brew tap sbstjn/bin
+$ > brew install rdm
+$ > rdm version
+0.0.3
+```
+
 ## Usage
 
 ### Project License
