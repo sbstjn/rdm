@@ -1,0 +1,11 @@
+test:
+  override:
+    - make test
+
+deployment:
+  production:
+    tag: /v[0-9]+(\.[0-9]+)*$/
+    commands:
+      - VERSION=${CIRCLE_TAG:1} make build
+      - cd /home/ubuntu/rdm
+      - VERSION=${CIRCLE_TAG:1} make deploy
