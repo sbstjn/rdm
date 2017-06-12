@@ -13,7 +13,6 @@ import (
 
 var cfgFile string
 var cfgOutput string
-
 var version string
 
 var rootCmd = &cobra.Command{
@@ -38,14 +37,18 @@ func init() {
 }
 
 func resolveOutputDirectory() {
+	// Prepand current directory if path is relative or none is set
 	if cfgOutput == "" || !strings.HasPrefix(cfgOutput, "/") {
 		dir, err := os.Getwd()
 
-		if err == nil {
-			cfgOutput = dir + "/" + cfgOutput
+		if err != nil {
+			panic(err)
 		}
+
+		cfgOutput = dir + "/" + cfgOutput
 	}
 
+	// Add trailing slash to path
 	if !strings.HasSuffix(cfgOutput, "/") {
 		cfgOutput = cfgOutput + "/"
 	}
@@ -78,9 +81,11 @@ func config() {
 	resolveOutputDirectory()
 }
 
+// Wrapper to prompt for user input using AlecAivazis/survey
 func askForData(fields []*survey.Question) map[string]interface{} {
 	data := map[string]interface{}{}
 	err := survey.Ask(fields, &data)
+
 	if err != nil {
 		panic(err.Error())
 	}

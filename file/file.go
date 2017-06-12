@@ -19,6 +19,11 @@ type File struct {
 // Render returns the content for the file
 func (f File) Render(data map[string]interface{}) string {
 	raw, err := Asset("templates/" + f.Template)
+
+	if err != nil {
+		panic(err)
+	}
+
 	tmpl, err := template.New(f.File).Parse(string(raw))
 
 	if err != nil {
@@ -26,7 +31,11 @@ func (f File) Render(data map[string]interface{}) string {
 	}
 
 	var doc bytes.Buffer
-	tmpl.Execute(&doc, data)
+	err = tmpl.Execute(&doc, data)
+
+	if err != nil {
+		panic(err)
+	}
 
 	return doc.String()
 }
