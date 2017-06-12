@@ -1,5 +1,8 @@
 # rdm - ReadMe scaffolding
 
+[![CircleCI](https://img.shields.io/circleci/project/github/sbstjn/rdm.svg)](https://circleci.com/gh/sbstjn/rdm)
+[![GitHub release](https://img.shields.io/github/release/sbstjn/rdm.svg)](https://github.com/sbstjn/rdm/releases)
+
 Command line tool to create default `LICENSE.md`, `CODE_OF_CONDUCT.md` and `README.md` files for your typical GitHub open source project.
 
 ## Features
