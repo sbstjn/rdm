@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"io/ioutil"
 	"time"
 
 	"github.com/sbstjn/rdm/file"
@@ -74,9 +73,9 @@ func init() {
 		Short: "Generate LICENSE.md file",
 		Run: func(cmd *cobra.Command, args []string) {
 			license := chooseLicense()
-			content := []byte(license.Render(askForData(license.Fields)))
+			data := askForData(license.Fields)
 
-			err := ioutil.WriteFile(cfgOutput+license.File, content, 0644)
+			err := license.Save(data, cfgOutput, cfgForce)
 			if err != nil {
 				panic(err)
 			}

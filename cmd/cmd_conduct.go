@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"io/ioutil"
-
 	"github.com/sbstjn/rdm/file"
 	"github.com/spf13/cobra"
 	"gopkg.in/AlecAivazis/survey.v1"
@@ -26,9 +24,9 @@ func init() {
 		Use:   "conduct",
 		Short: "Generate CODE_OF_CONDUCT.md file",
 		Run: func(cmd *cobra.Command, args []string) {
-			content := []byte(conduct.Render(askForData(conduct.Fields)))
+			data := askForData(conduct.Fields)
 
-			err := ioutil.WriteFile(cfgOutput+conduct.File, content, 0644)
+			err := conduct.Save(data, cfgOutput, cfgForce)
 			if err != nil {
 				panic(err)
 			}
