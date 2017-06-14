@@ -21,7 +21,7 @@ deploy:
 
 	mv rdm dist/latest/rdm
 
-	zip dist/latest/rdm_darwin_amd64.zip dist/latest/rdm -j
+	cd dist/latest && zip rdm_darwin_amd64.zip rdm
 
 	shasum -a256 dist/latest/rdm_darwin_amd64.zip
 
