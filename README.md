@@ -11,6 +11,26 @@ Command line tool to create default `LICENSE.md`, `CODE_OF_CONDUCT.md` and `READ
 - Create `LICENSE.md` ([MIT](https://opensource.org/licenses/MIT) or [unlicense](http://unlicense.org/))
 - Create `CODE_OF_CONDUCT.md` (By [Contributor Covenant](http://contributor-covenant.org/version/1/4/)) 
 
+```bash
+$ > rdm
+
+Scaffold common GitHub project files.
+
+Usage:
+  rdm [command]
+
+Available Commands:
+  conduct     Generate CODE_OF_CONDUCT.md file
+  help        Help about any command
+  license     Generate LICENSE.md file
+  version     Show command version
+
+Flags:
+      --config string   config file (default is $HOME/.rdm.yaml)
+  -f, --force           Overwrite files
+  -o, --out string      output path (default is current directory)
+```
+
 ## Install
 
 ```bash

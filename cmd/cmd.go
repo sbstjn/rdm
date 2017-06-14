@@ -17,7 +17,8 @@ var cfgForce bool
 var version string
 
 var rootCmd = &cobra.Command{
-	Use: "rdm",
+	Use:  "rdm",
+	Long: "Scaffold common GitHub project files.",
 }
 
 // Run initializes the rdm command
