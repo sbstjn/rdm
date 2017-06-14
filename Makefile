@@ -21,7 +21,9 @@ deploy:
 
 	mv rdm dist/latest/rdm
 
-	zip dist/latest/rdm_darwin_amd64.zip dist/latest/rdm
+	zip dist/latest/rdm_darwin_amd64.zip dist/latest/
+
+	shasum -a256 dist/latest/rdm_darwin_amd64.zip
 
 	aws s3 sync dist/latest s3://dl.sbstjn.com/rdm/latest
 	aws s3 sync dist/latest s3://dl.sbstjn.com/rdm/${VERSION}
