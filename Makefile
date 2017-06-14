@@ -14,11 +14,14 @@ bindata:
 	go-bindata -o file/data.go -pkg file templates/*
 
 deploy:
-	rm -rf dist
+	rm -rf dist	
+
 	mkdir -p dist
 	mkdir -p dist/latest
-	cp rdm dist/latest/rdm
-	cd dist/latest && zip rdm_darwin_amd64.zip rdm
+
+	mv rdm dist/latest/rdm
+
+	zip dist/latest/rdm_darwin_amd64.zip dist/latest/rdm
+
 	aws s3 sync dist/latest s3://dl.sbstjn.com/rdm/latest
-	mv dist/latest dist/${VERSION}
-	aws s3 sync dist/${VERSION} s3://dl.sbstjn.com/rdm/${VERSION}
+	aws s3 sync dist/latest s3://dl.sbstjn.com/rdm/${VERSION}
