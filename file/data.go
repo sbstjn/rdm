@@ -3,6 +3,10 @@
 // templates/conduct.md
 // templates/license/mit.md
 // templates/license/unlicense.md
+// templates/readme/contribution.md
+// templates/readme/license.md
+// templates/readme/shields.md
+// templates/readme.md
 // DO NOT EDIT!
 
 package file
@@ -130,6 +134,86 @@ func templatesLicenseUnlicenseMd() (*asset, error) {
 	return a, nil
 }
 
+var _templatesReadmeContributionMd = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x4c\xce\xc1\x4a\x03\x41\x10\x84\xe1\x7b\x9e\xa2\x20\x17\x05\xd9\x97\xd8\x28\x78\x71\x2f\xf1\x24\x12\x3a\x33\x65\x76\xc8\xa4\x7b\xe9\xe9\xd9\xe8\xdb\x0b\xc6\x43\x8e\x55\xf0\xc3\xb7\xdd\x62\x34\x0d\x2f\xc7\x1e\xc5\x74\xb3\xd9\x1b\x2e\x72\x26\x5a\x77\xe2\xc7\x3a\x66\x59\x09\xc1\x52\x29\x4d\x34\xc0\xef\x85\x5e\xa8\x89\x4f\xb7\x93\x70\x4a\x86\x75\xc7\x47\xb2\x4c\xd8\x17\x92\x69\xee\x29\x3e\x1f\xc6\x69\xf7\x7c\x98\x5e\x0e\xe3\xf4\xb6\x7b\x1f\xf7\xc3\x25\x3f\x0e\x78\x0d\x58\x8f\x5a\x94\xed\x2f\x4b\xe6\xc4\x2a\xb5\xb3\x41\x34\xe3\xc8\x5a\xb8\xfe\x8f\x6b\xa9\xf5\x46\xba\x9a\x9f\x8b\x9e\x10\x76\x62\xcc\x74\x08\x66\x59\x96\x42\xbf\x43\x0d\xbf\x01\x00\x00\xff\xff\x35\xf2\xab\x9c\xd2\x00\x00\x00")
+
+func templatesReadmeContributionMdBytes() ([]byte, error) {
+	return bindataRead(
+		_templatesReadmeContributionMd,
+		"templates/readme/contribution.md",
+	)
+}
+
+func templatesReadmeContributionMd() (*asset, error) {
+	bytes, err := templatesReadmeContributionMdBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "templates/readme/contribution.md", size: 210, mode: os.FileMode(420), modTime: time.Unix(1497478314, 0)}
+	a := &asset{bytes: bytes, info: info}
+	return a, nil
+}
+
+var _templatesReadmeLicenseMd = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x52\x56\x56\xf0\xc9\x4c\x4e\xcd\x2b\x4e\xe5\xe2\x72\x4b\x4d\xcd\x51\x48\x2b\x4a\x4d\x55\x28\xc9\x57\x28\x2d\x4e\x55\x28\xc9\x48\x55\x48\xce\x4f\x49\xd5\x51\xc8\x2c\x51\x2f\x56\x28\x4a\xcd\x49\x4d\x2c\x4e\x4d\x51\x28\x2d\xce\xcc\x4b\x07\xcb\x46\x57\x57\x2b\xe8\x41\x0d\x50\xa8\xad\x55\xc8\x81\x30\x63\x35\x7c\x3c\x9d\x5d\xfd\x82\x5d\xf5\x72\x53\x34\xf5\x00\x01\x00\x00\xff\xff\x59\x3a\x65\x50\x64\x00\x00\x00")
+
+func templatesReadmeLicenseMdBytes() ([]byte, error) {
+	return bindataRead(
+		_templatesReadmeLicenseMd,
+		"templates/readme/license.md",
+	)
+}
+
+func templatesReadmeLicenseMd() (*asset, error) {
+	bytes, err := templatesReadmeLicenseMdBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "templates/readme/license.md", size: 100, mode: os.FileMode(420), modTime: time.Unix(1497477884, 0)}
+	a := &asset{bytes: bytes, info: info}
+	return a, nil
+}
+
+var _templatesReadmeShieldsMd = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x9c\xce\xb1\x6a\x03\x31\x0c\x80\xe1\x57\x51\x33\xf5\x16\x6b\xef\x7a\x84\x36\x10\x3a\x34\x63\xe8\x70\xf6\xa9\xb6\x8a\x1d\x07\xcb\xe9\x62\xfc\xee\x85\xd8\x97\x12\x68\x1b\xc8\x28\xf1\x4b\x7c\xa5\x00\x7f\x80\x9b\x04\xd4\xce\x31\xf9\x59\x60\x35\x72\x32\x9e\xc6\xcd\x0a\x6a\xdd\x3f\xec\x97\xf1\xfd\xd1\xe5\x7c\x94\x27\x44\x0e\x56\x49\xab\x15\x47\x34\xe7\xc0\x30\x1e\x53\xfc\x24\x93\xd1\x72\x76\x27\x8d\xa5\x80\x7a\xe6\xfc\x72\xd2\x50\xab\x92\x2f\x3b\xfc\xbc\x58\x6e\x94\x89\x01\xad\xbb\x6e\x07\x28\x05\xe8\x30\x43\xad\xbf\xf9\x7a\xf7\x46\x9e\x26\xa1\xae\xec\xcb\xd4\x96\x7f\x5a\x3b\xad\x67\xff\x12\x5b\x7a\x06\x5e\x65\xcb\xb1\xdc\x60\x6e\xd9\xd0\xe1\xe2\xf3\x6d\xba\x05\xeb\xd9\x7d\x30\xed\xa3\xc6\x30\x49\xa6\x84\xdb\xcd\xb8\x7e\xdd\xad\x55\x98\x87\x8b\xf2\x3b\x00\x00\xff\xff\x2d\x25\x78\xc1\xed\x01\x00\x00")
+
+func templatesReadmeShieldsMdBytes() ([]byte, error) {
+	return bindataRead(
+		_templatesReadmeShieldsMd,
+		"templates/readme/shields.md",
+	)
+}
+
+func templatesReadmeShieldsMd() (*asset, error) {
+	bytes, err := templatesReadmeShieldsMdBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "templates/readme/shields.md", size: 493, mode: os.FileMode(420), modTime: time.Unix(1497477944, 0)}
+	a := &asset{bytes: bytes, info: info}
+	return a, nil
+}
+
+var _templatesReadmeMd = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x52\x56\xa8\xae\x56\xd0\x0b\x28\xca\xcf\x4a\x4d\x2e\x51\xa8\xad\xe5\xe2\x0a\xc9\xc8\x2c\x56\xc8\x2c\x56\x48\x54\x08\x72\x75\x74\xf1\x75\xd5\xcb\x4d\x51\x48\xcb\xcc\x49\x55\x04\x04\x00\x00\xff\xff\x5a\x55\x3a\x04\x2b\x00\x00\x00")
+
+func templatesReadmeMdBytes() ([]byte, error) {
+	return bindataRead(
+		_templatesReadmeMd,
+		"templates/readme.md",
+	)
+}
+
+func templatesReadmeMd() (*asset, error) {
+	bytes, err := templatesReadmeMdBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "templates/readme.md", size: 43, mode: os.FileMode(420), modTime: time.Unix(1497464969, 0)}
+	a := &asset{bytes: bytes, info: info}
+	return a, nil
+}
+
 // Asset loads and returns the asset for the given name.
 // It returns an error if the asset could not be found or
 // could not be loaded.
@@ -185,6 +269,10 @@ var _bindata = map[string]func() (*asset, error){
 	"templates/conduct.md": templatesConductMd,
 	"templates/license/mit.md": templatesLicenseMitMd,
 	"templates/license/unlicense.md": templatesLicenseUnlicenseMd,
+	"templates/readme/contribution.md": templatesReadmeContributionMd,
+	"templates/readme/license.md": templatesReadmeLicenseMd,
+	"templates/readme/shields.md": templatesReadmeShieldsMd,
+	"templates/readme.md": templatesReadmeMd,
 }
 
 // AssetDir returns the file names below a certain
@@ -233,6 +321,12 @@ var _bintree = &bintree{nil, map[string]*bintree{
 			"mit.md": &bintree{templatesLicenseMitMd, map[string]*bintree{}},
 			"unlicense.md": &bintree{templatesLicenseUnlicenseMd, map[string]*bintree{}},
 		}},
+		"readme": &bintree{nil, map[string]*bintree{
+			"contribution.md": &bintree{templatesReadmeContributionMd, map[string]*bintree{}},
+			"license.md": &bintree{templatesReadmeLicenseMd, map[string]*bintree{}},
+			"shields.md": &bintree{templatesReadmeShieldsMd, map[string]*bintree{}},
+		}},
+		"readme.md": &bintree{templatesReadmeMd, map[string]*bintree{}},
 	}},
 }}
 
