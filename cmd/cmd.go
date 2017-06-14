@@ -13,6 +13,7 @@ import (
 
 var cfgFile string
 var cfgOutput string
+var cfgForce bool
 var version string
 
 var rootCmd = &cobra.Command{
@@ -32,6 +33,7 @@ func Run(v string) {
 func init() {
 	cobra.OnInitialize(config)
 
+	rootCmd.PersistentFlags().BoolVarP(&cfgForce, "force", "f", false, "Overwrite files")
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.rdm.yaml)")
 	rootCmd.PersistentFlags().StringVarP(&cfgOutput, "out", "o", "", "output path (default is current directory)")
 }
