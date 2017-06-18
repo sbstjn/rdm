@@ -2,7 +2,6 @@ package file
 
 import (
 	"errors"
-	"io/ioutil"
 
 	"github.com/spf13/afero"
 )
@@ -33,5 +32,5 @@ func (f File) Save(content string, path string, force bool) error {
 		return errors.New("File already exists! Use -f to force overwrite …")
 	}
 
-	return ioutil.WriteFile(f.absolute(path), []byte(content), 0644)
+	return afero.WriteFile(appFS, f.absolute(path), []byte(content), 0644)
 }
