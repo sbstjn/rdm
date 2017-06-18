@@ -2,7 +2,13 @@ run:
 	go run *.go
 
 test:
-	go test file/*.go
+	go test -cover -race ./...
+
+bench:
+	go test -bench=. ./...
+
+race:
+	go test -v -race ./...
 
 compile:
 	go build -ldflags "-X main.version=${VERSION}"

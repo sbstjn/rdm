@@ -8,10 +8,13 @@ import (
 	"gopkg.in/AlecAivazis/survey.v1"
 )
 
-var licenseMit = file.File{
-	Name:     "MIT",
-	File:     "LICENSE.md",
-	Template: "license/mit.md",
+var licenseFile = file.File{
+	File: "LICENSE.md",
+}
+
+var licenseMit = file.Text{
+	Name: "MIT",
+	File: "license/mit.md",
 	Fields: []*survey.Question{
 		{
 			Name:     "Author",
@@ -26,18 +29,17 @@ var licenseMit = file.File{
 	},
 }
 
-var licenseUnlicense = file.File{
-	Name:     "Unlicense",
-	File:     "LICENSE.md",
-	Template: "license/unlicense.md",
+var licenseUnlicense = file.Text{
+	Name: "Unlicense",
+	File: "license/unlicense.md",
 }
 
-var licenseList = []file.File{
+var licenseList = []file.Text{
 	licenseMit,
 	licenseUnlicense,
 }
 
-func licenseByName(name string) *file.File {
+func licenseByName(name string) *file.Text {
 	for _, element := range licenseList {
 		if name == element.Name {
 			return &element
@@ -47,7 +49,7 @@ func licenseByName(name string) *file.File {
 	return nil
 }
 
-func chooseLicense() *file.File {
+func chooseLicense() *file.Text {
 	var list = []string{}
 	for _, element := range licenseList {
 		list = append(list, element.Name)
@@ -72,10 +74,12 @@ func init() {
 		Use:   "license",
 		Short: "Generate LICENSE.md file",
 		Run: func(cmd *cobra.Command, args []string) {
-			license := chooseLicense()
-			data := askForData(license.Fields)
+			data := map[string]interface{}{}
 
-			err := license.Save(data, cfgOutput, cfgForce)
+			license := chooseLicense()
+			content := license.Render(data)
+
+			err := licenseFile.Save(content, cfgOutput, cfgForce)
 			if err != nil {
 				panic(err)
 			}

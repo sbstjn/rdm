@@ -7,9 +7,12 @@ import (
 )
 
 var conduct = file.File{
-	Name:     "Code of Conduct",
-	File:     "CODE_OF_CONDUCT.md",
-	Template: "conduct.md",
+	File: "CODE_OF_CONDUCT.md",
+}
+
+var conductContent = file.Text{
+	Name: "Conduct",
+	File: "conduct.md",
 	Fields: []*survey.Question{
 		{
 			Name:     "Mail",
@@ -24,9 +27,10 @@ func init() {
 		Use:   "conduct",
 		Short: "Generate CODE_OF_CONDUCT.md file",
 		Run: func(cmd *cobra.Command, args []string) {
-			data := askForData(conduct.Fields)
+			data := map[string]interface{}{}
+			content := conductContent.Render(data)
 
-			err := conduct.Save(data, cfgOutput, cfgForce)
+			err := conduct.Save(content, cfgOutput, cfgForce)
 			if err != nil {
 				panic(err)
 			}
